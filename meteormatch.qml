@@ -51,12 +51,12 @@
 
   import QtQuick 2.0
   import "content"
-  import "content/samegame.js" as SameGame
+  import "content/MeteorMatch.js" as MeteorMatch
 
   Rectangle {
       id: screen
 
-      Component.onCompleted: { SameGame.startNewGame() }
+      Component.onCompleted: { MeteorMatch.startNewGame() }
 
       width: 480; height: 480
 
@@ -76,7 +76,7 @@
               height: parent.height - (parent.height % blockSize);
 
               MouseArea {
-                  anchors.fill: parent; onClicked: SameGame.handleClick(mouse.x,mouse.y);
+                  anchors.fill: parent; onClicked: MeteorMatch.handleClick(mouse.x,mouse.y);
               }
           }
       }
@@ -94,7 +94,7 @@
 
           onClosed: {
               if (nameInputDialog.inputText != "")
-                  SameGame.saveHighScore(nameInputDialog.inputText);
+                  MeteorMatch.saveHighScore(nameInputDialog.inputText);
           }
       }
 
@@ -107,7 +107,7 @@
           Button {
               anchors { left: parent.left; verticalCenter: parent.verticalCenter }
               text: "New Game"
-              onClicked: SameGame.startNewGame()
+              onClicked: MeteorMatch.startNewGame()
           }
 
           Text {
