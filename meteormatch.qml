@@ -98,6 +98,12 @@
           }
       }
 
+      Text {
+          id: score
+          anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: parent.height * 0.02 }
+          text: "Score: " + gameCanvas.score
+      }
+
       Rectangle {
           id: toolBar
           width: parent.width; height: 30
@@ -110,10 +116,6 @@
               onClicked: MeteorMatch.startNewGame()
           }
 
-          Text {
-              id: score
-              anchors { right: parent.right; verticalCenter: parent.verticalCenter }
-              text: "Score: " + gameCanvas.score
-          }
+
       }
   }
