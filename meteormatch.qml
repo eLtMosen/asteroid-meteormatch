@@ -60,11 +60,8 @@
 
       width: 480; height: 480
 
-      SystemPalette { id: activePalette }
-
       Item {
-          width: parent.width
-          anchors { top: parent.top; bottom: toolBar.top }
+          anchors.fill: parent
 
           Item {
               id: gameCanvas
@@ -104,13 +101,5 @@
           id: score
           anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: parent.height * 0.02 }
           text: "Score: " + gameCanvas.score
-      }
-
-      Rectangle {
-          id: toolBar
-          width: parent.width; height: 30
-          color: activePalette.window
-          anchors.bottom: screen.bottom
-
       }
   }
