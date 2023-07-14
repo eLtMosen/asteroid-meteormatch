@@ -92,6 +92,8 @@
           anchors.centerIn: parent
           z: 100
 
+          onOpacityChanged: if (opacity == 0) MeteorMatch.startNewGame()
+
           onClosed: {
               if (nameInputDialog.inputText != "")
                   MeteorMatch.saveHighScore(nameInputDialog.inputText);
@@ -109,13 +111,6 @@
           width: parent.width; height: 30
           color: activePalette.window
           anchors.bottom: screen.bottom
-
-          Button {
-              anchors { left: parent.left; verticalCenter: parent.verticalCenter }
-              text: "New Game"
-              onClicked: MeteorMatch.startNewGame()
-          }
-
 
       }
   }
